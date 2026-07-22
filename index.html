@@ -1052,27 +1052,71 @@
 </footer>
 
 <script>
-  function handleSignup() {
+  async function handleSignup() {
     const email = document.getElementById('emailInput').value;
-    if (!email || !email.includes('@')) {
-      document.getElementById('emailInput').style.borderColor = '#EF4444';
-      return;
-    }
-    document.getElementById('emailInput').style.borderColor = '#3DD68C';
-    document.getElementById('successMsg').style.display = 'block';
-    document.querySelector('.signup-box').style.opacity = '0.5';
-    document.querySelector('.signup-box').style.pointerEvents = 'none';
-  }
 
-  function handleSignup2() {
-    const email = document.getElementById('emailInput2').value;
     if (!email || !email.includes('@')) {
-      document.getElementById('emailInput2').style.borderColor = '#EF4444';
-      return;
+        document.getElementById('emailInput').style.borderColor = '#EF4444';
+        return;
     }
+
+    document.getElementById('emailInput').style.borderColor = '#3DD68C';
+
+    try {
+        // Send email to Make.com
+        await fetch('https://hook.eu1.make.com/mnsetb7npkrhpw7bjbv7gfo32f1nihtt', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                email: email
+            })
+        });
+
+        // Show success message
+        document.getElementById('successMsg').style.display = 'block';
+        document.querySelector('.signup-box').style.opacity = '0.5';
+        document.querySelector('.signup-box').style.pointerEvents = 'none';
+
+    } catch (error) {
+        alert("Submission failed. Please try again.");
+        console.error(error);
+    }
+}
+ async function handleSignup2() {
+    const email = document.getElementById('emailInput2').value;
+
+    if (!email || !email.includes('@')) {
+        document.getElementById('emailInput2').style.borderColor = '#EF4444';
+        return;
+    }
+
     document.getElementById('emailInput2').style.borderColor = '#3DD68C';
-    document.getElementById('successMsg2').style.display = 'block';
-  }
+
+    try {
+        // Send email to Make.com
+        await fetch('https://hook.eu1.make.com/mnsetb7npkrhpw7bjbv7gfo32f1nihtt', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                email: email
+            })
+        });
+
+        // Show success message
+        document.getElementById('successMsg').style.display = 'block';
+        document.querySelector('.signup-box').style.opacity = '0.5';
+        document.querySelector('.signup-box').style.pointerEvents = 'none';
+
+    } catch (error) {
+        alert("Submission failed. Please try again.");
+        console.error(error);
+    }
+}
+ 
 </script>
 
 </body>
