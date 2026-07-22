@@ -790,7 +790,7 @@
   <div class="nav-inner">
     <div class="logo">
       <div class="logo-dot"></div>
-      ClientCodelabs
+      ClientFlow
     </div>
     <a href="#waitlist" class="nav-cta">Get Early Access</a>
   </div>
@@ -806,7 +806,7 @@
   <h1>Your clients deserve<br>better than <span>5 separate emails.</span></h1>
 
   <p class="hero-sub">
-    ClientCodelabs gives every client a single branded link — where they approve your proposal, sign the contract, pay the invoice, and download deliverables. No chaos. No follow-ups.
+    ClientFlow gives every client a single branded link — where they approve your proposal, sign the contract, pay the invoice, and download deliverables. No chaos. No follow-ups.
   </p>
 
   <div class="signup-box" id="waitlist">
@@ -885,7 +885,7 @@
       <div class="step-num">02</div>
       <div class="step-icon">🔗</div>
       <h3>Send one link</h3>
-      <p>ClientCodelabs generates a branded portal URL. Paste it in one email — or drop it straight from Zoho CRM when you close a deal.</p>
+      <p>ClientFlow generates a branded portal URL. Paste it in one email — or drop it straight from Zoho CRM when you close a deal.</p>
     </div>
     <div class="step">
       <div class="step-accent"></div>
@@ -912,7 +912,7 @@
     <div class="feat-card">
       <div class="feat-icon">📄</div>
       <h3>Proposal builder</h3>
-      <p>Write your proposal directly in ClientCodelabs. Clients see it beautifully formatted — no PDF attachments, no formatting disasters.</p>
+      <p>Write your proposal directly in ClientFlow. Clients see it beautifully formatted — no PDF attachments, no formatting disasters.</p>
     </div>
     <div class="feat-card">
       <div class="feat-icon">✒️</div>
@@ -932,7 +932,7 @@
     <div class="feat-card">
       <div class="feat-icon">🎨</div>
       <h3>Branded portal</h3>
-      <p>Your logo, your colors, your domain. Clients never see "ClientCodelabs" — they see you.</p>
+      <p>Your logo, your colors, your domain. Clients never see "ClientFlow" — they see you.</p>
     </div>
     <div class="feat-card">
       <div class="feat-icon">🔔</div>
@@ -948,7 +948,7 @@
   <div class="container">
   <div class="quote-card">
     <p class="quote-text">
-      I used to spend 45 minutes after every closed deal just setting up the onboarding paperwork. ClientCodelabs cut that to under 5. My clients think I'm incredibly organised now.
+      I used to spend 45 minutes after every closed deal just setting up the onboarding paperwork. ClientFlow cut that to under 5. My clients think I'm incredibly organised now.
     </p>
     <div class="quote-author">
       <div class="quote-avatar">S</div>
@@ -985,7 +985,7 @@
     <div class="price-card popular">
       <div class="popular-badge">MOST POPULAR</div>
       <div class="price-name">Pro</div>
-      <div class="price-amount">$24 <span>/mo</span></div>
+      <div class="price-amount">$19 <span>/mo</span></div>
       <div class="price-desc">For freelancers running multiple active clients.</div>
       <ul class="price-features">
         <li>Unlimited client portals</li>
@@ -1000,7 +1000,7 @@
 
     <div class="price-card">
       <div class="price-name">Agency</div>
-      <div class="price-amount">$89 <span>/mo</span></div>
+      <div class="price-amount">$79 <span>/mo</span></div>
       <div class="price-desc">For small teams and white-label resellers.</div>
       <ul class="price-features">
         <li>Everything in Pro</li>
@@ -1044,78 +1044,34 @@
   <div class="nav-inner">
     <div class="logo" style="font-size: 16px;">
       <div class="logo-dot"></div>
-      Clientcodelabs
+      ClientFlow
     </div>
     <p>Built in public · Zero funding · Real progress</p>
-    <p>© 2026 Clientcodelabs. All rights reserved.</p>
+    <p>© 2026 ClientFlow. All rights reserved.</p>
   </div>
 </footer>
 
 <script>
-  async function handleSignup() {
+  function handleSignup() {
     const email = document.getElementById('emailInput').value;
-
     if (!email || !email.includes('@')) {
-        document.getElementById('emailInput').style.borderColor = '#EF4444';
-        return;
+      document.getElementById('emailInput').style.borderColor = '#EF4444';
+      return;
     }
-
     document.getElementById('emailInput').style.borderColor = '#3DD68C';
-
-    try {
-        // Send email to Make.com
-        await fetch('https://hook.eu1.make.com/mnsetb7npkrhpw7bjbv7gfo32f1nihtt', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                email: email
-            })
-        });
-
-        // Show success message
-        document.getElementById('successMsg').style.display = 'block';
-        document.querySelector('.signup-box').style.opacity = '0.5';
-        document.querySelector('.signup-box').style.pointerEvents = 'none';
-
-    } catch (error) {
-        alert("Submission failed. Please try again.");
-        console.error(error);
-    }
+    document.getElementById('successMsg').style.display = 'block';
+    document.querySelector('.signup-box').style.opacity = '0.5';
+    document.querySelector('.signup-box').style.pointerEvents = 'none';
   }
 
   function handleSignup2() {
-    const email = document.getElementById('emailInput').value;
-
+    const email = document.getElementById('emailInput2').value;
     if (!email || !email.includes('@')) {
-        document.getElementById('emailInput').style.borderColor = '#EF4444';
-        return;
+      document.getElementById('emailInput2').style.borderColor = '#EF4444';
+      return;
     }
-
-    document.getElementById('emailInput').style.borderColor = '#3DD68C';
-
-    try {
-        // Send email to Make.com
-        await fetch('https://hook.eu1.make.com/mnsetb7npkrhpw7bjbv7gfo32f1nihtt', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                email: email
-            })
-        });
-
-        // Show success message
-        document.getElementById('successMsg').style.display = 'block';
-        document.querySelector('.signup-box').style.opacity = '0.5';
-        document.querySelector('.signup-box').style.pointerEvents = 'none';
-
-    } catch (error) {
-        alert("Submission failed. Please try again.");
-        console.error(error);
-    }
+    document.getElementById('emailInput2').style.borderColor = '#3DD68C';
+    document.getElementById('successMsg2').style.display = 'block';
   }
 </script>
 
